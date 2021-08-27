@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+:root {
+    --azul-suave: hsl(240, 73%, 65%);
+    --violeta-suave: hsl(273, 75%, 66%);
+    
+    --vermelho-suave: hsl(14, 88%, 65%);
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(var(--violeta-suave), var(--azul-suave));
+    height: 100vh;
+}
+main {
+    width: 1000px;
+    height: 55vh;
+    border-radius: 20px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.imgBox {
+    background: white;
+    border-radius: 20px 0px 0px 20px;
+    width: 50%;
+    height: 100%;
+    background-image: 
+    url(/images/illustration-woman-online-desktop.svg),
+    url(/images/bg-pattern-desktop.svg);
+    background-size: 100%, 180%;
+    background-position: -80px 50%, -460px 70%;
+    background-repeat: no-repeat;
+}
+.caixa {
+    position: relative;
+    top: 40%;
+    right: 25%;
+}
+.ilustResponsive {
+    display: none;
+}
+.accordionWrapper {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+}
+.accordionWrapper > h1 {
+    margin-left: 10px;
+    font-size: 2.5rem;
+}
+
+/*faq*/
+.accordionItem {
+    color: #444;
+    cursor: pointer;
+    border-bottom: 2px solid gainsboro;
+    transition: 0.4s;
+    
+}
+.accordionItemHeading:after {
+    content: url("/images/icon-arrow-down.svg");
+    float: right;
+}
+.accordionItemHeading:hover:after {
+    transform: rotate(180deg);
+}
+.accordionItemContent {
+    overflow: hidden;
+    padding: 15px;
+    display:block;
+	transform: scaleY(1);
+    font-size: 1.25rem;
+}
+.accordionWrapper {
+    padding:30px;
+    width:50%;
+}
+.accordionItem{
+    width:100%;
+    margin-bottom: 10px;
+    
+}
+.accordionItemHeading{
+    cursor:pointer;
+    width:100%;
+    font-size: 1.4rem;
+    color: black;
+    padding: 10px;
+}
+.semBold {
+    font-weight: 400;
+}
+.comBold {
+    font-weight: 700;
+    color: var(--vermelho-suave);
+}
+.close > .accordionItemContent{
+    height: 0px;
+	transform: scaleY(0);
+    display: none;
+}
+
+@media (max-width: 1000px) {
+    main {
+        width: 370px;
+        height: auto;
+        flex-direction: column;
+    }
+    .imgBox {
+        background: white;
+        border-radius: 20px 20px 0px 0px;
+        width: 80%;
+        height: 10%;
+        background-image: url(/images/bg-pattern-mobile.svg);
+        background-size: 100%;
+        background-position: 50% 0%;
+        background-repeat: no-repeat;
+    }
+    .caixa {
+        display: none;
+        position: relative;
+        top: 40%;
+        right: 20%;
+    }
+    .ilustResponsive {
+        display: block;
+        position: relative;
+        top: -100px;
+    }
+    .accordionWrapper {
+        height: 90%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        
+    }
+    .accordionWrapper > h1 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    .accordionItemHeading {
+        font-size: 1.25rem;
+    }
+}
